@@ -1,0 +1,14 @@
+<div id="users">
+	<div class="plates">
+		<div class="top title-h1">{{viewTitle}}</div>
+		<div class="plate" ng-repeat="user in users">
+			<a href="#/users/{{user.id}}">
+				<p>userId: {{user.id}}</p>
+				<p>name: {{user.name}}</p>
+				<p>username: {{user.username}}</p>
+				<p>email: {{user.email}} </p>
+				<img src="" alt="user-photo">
+			</a>
+		</div>
+	</div>
+</div>

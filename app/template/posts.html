@@ -1,0 +1,10 @@
+<div id="posts">
+  <div class="plates">
+    <div class="top title-h1">{{viewTitle}}</div>
+    <a class="plate shift" href="#/posts/{{post.id}}" ng-repeat="post in posts" ng-if="$index < range">
+        <p class="title">{{post.title}}</p>
+        <p>{{post.body}} </p>
+    </a>
+    <button class="range" ng-click="upRange()">NEXT</button>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="kodespaApp">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>KodeSPA</title>
+
+		<script type="text/javascript" src="js/angular.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/index.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/angular-route.min.js" charset="utf-8"></script>
+		<script type="text/javascript" src="js/angular-resource.min.js" charset="utf-8"></script>
+
+		
+		<link rel="stylesheet" href="css/index.css">
+
+	</head>
+	<body ng-controller="NavMenuCtrl" ng-class="{'scroll': toggle}">
+		<header>
+			<div class="wrapper side-paddings">
+				<a href="" class="logo"></a>
+				<div>
+        			<span class="mobile-menu-button" ng-class="{'active': toggle}" ng-click="toggle = !toggle"></span>
+					<div class="menu">
+						<ul>
+							<li ng-repeat="navLink in navLinks" ng-class="navClass('{{navLink.Title}}')">
+								<a href="#/{{navLink.Title}}">{{navLink.LinkText}}</a>
+							</li>
+						</ul>
+					</div>
+					<div class="mobile-menu" ng-class="{'active': toggle}" ng-click="toggle = !toggle">
+						<ul>
+							<li ng-repeat="navLink in navLinks" ng-class="navClass('{{navLink.Title}}')">
+								<a href="#/{{navLink.Title}}">{{navLink.LinkText}}</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div id="preloader" loading>
+			<div class="spinner"></div>
+		</div>
+		<div class="page-wrapper side-paddings">
+			<ng-view></ng-view>
+		</div>
+	</body>
+</html>

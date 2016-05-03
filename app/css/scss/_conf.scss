@@ -1,0 +1,108 @@
+//=======================
+// Точки для media-queries
+//=======================
+$media1200: 1200px;
+$media1024: 1024px;
+$media960: 960px;
+$media900: 900px;
+$media768: 768px;
+$media640: 640px;
+$media600: 600px;
+$media480: 480px;
+$media400: 400px;
+
+
+
+//=======================
+// Sprite
+//=======================
+$sprite_url: url(/static/img/logo.svg);
+$sprite_width: 440px;
+$sprite_height: 70px;
+
+
+//=======================
+// Цвета
+//=======================
+$white: #FFFFFF;
+$black: #000000;
+$red: #A33C3D;
+$light_red: #FFC2A9;
+$light_gray: #CCCCCC;
+$plate_top: #009788;
+
+
+//=======================
+// Текст
+//=======================
+$text_color: #1f2328;
+
+
+//=======================
+// Меню
+//=======================
+$menu_burger_color: $white;
+$menu_burger_width: 32px;
+$menu_burger_line_height: 3px;
+$menu_burger_line_space: 6px;
+
+
+//=======================
+// Точка перехода к мобильному меню
+//=======================
+$mobile_menu_point: $media768;
+
+
+//=======================
+// Отступы
+//=======================
+.side-paddings {
+	@include media_interval($media400, 0) {
+		padding-left: 35px;
+		padding-right: 35px;
+	}
+	@include media_interval(0, $media400) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+
+
+//=======================
+// Шрифты
+//=======================
+@font-face {
+ font-family: 'HeliosC';
+ src:url('../font/heliosc.eot'),
+ 	 url('../font/heliosc.otf');
+}
+@font-face {
+ font-family: 'HeliosCondC';
+ src:url('../font/helioscondc.eot'),
+ 	 url('../font/helioscondc.otf');
+}
+@font-face {
+ font-family: 'HeliosLightC';
+ src:url('../font/helioslightc.eot'),
+ 	 url('../font/helioslightc.otf');
+}
+@font-face {
+ font-family: 'HeliosThinC';
+ src:url('../font/heliosthinc.eot'),
+ 	 url('../font/heliosthinc.otf');
+}
+@font-face {
+ font-family: 'HelveticaNeueRegular';
+ src: local('Helvetica Neue Regular');
+}
+
+@mixin font-default() {
+  font-family: 'HelveticaNeueRegular', Arial, sans-serif;
+  @include font-size(16px);
+}
+
+.title-h1 {
+	@include font-size(20px, 20px);
+	padding: 20px 20px 10px;
+}
